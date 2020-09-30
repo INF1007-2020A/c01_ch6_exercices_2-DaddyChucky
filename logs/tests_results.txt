@@ -11,14 +11,14 @@ FAIL: test_list_to_dict (__main__.TestExercice)
 Traceback (most recent call last):
   File "test_exercice.py", line 25, in test_list_to_dict
     'Mauvaise reponse'
-AssertionError: Lists differ: [{(0, 'a'), (2, 'z'), (1, 'b'), (3, 'patate[49 chars]e')}] != [{'a': 0, 'b': 1, 'z': 2, 'patate': 3}, {'a[33 chars]: 3}]
+AssertionError: Lists differ: [{(3, 'patate'), (0, 'a'), (2, 'z'), (1, 'b[49 chars]e')}] != [{'a': 0, 'b': 1, 'z': 2, 'patate': 3}, {'a[33 chars]: 3}]
 
 First differing element 0:
-{(0, 'a'), (2, 'z'), (1, 'b'), (3, 'patate')}
+{(3, 'patate'), (0, 'a'), (2, 'z'), (1, 'b')}
 {'a': 0, 'b': 1, 'z': 2, 'patate': 3}
 
-- [{(0, 'a'), (2, 'z'), (1, 'b'), (3, 'patate')},
--  {(0, 'a'), (1, '2'), (2, 'hello'), (3, 'tigre')}]
+- [{(3, 'patate'), (0, 'a'), (2, 'z'), (1, 'b')},
+-  {(2, 'hello'), (0, 'a'), (1, '2'), (3, 'tigre')}]
 + [{'a': 0, 'b': 1, 'patate': 3, 'z': 2},
 +  {'2': 1, 'a': 0, 'hello': 2, 'tigre': 3}] : Mauvaise reponse
 
