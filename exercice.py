@@ -7,36 +7,53 @@ from matplotlib.colors import cnames
 
 def list_to_dict(some_list: list) -> dict:
     # TODO: Transformer la liste en dictionnaire, les éléments de la liste deviennent les clés et leur index deviennent les valeurs
-    return {}
+    # for index, elements in enumerate(some_list):
+    #     print(index, elements)
+    # print(some_list.index())
+    return {(index, elements) for index, elements in enumerate(some_list)}
 
 
 def color_name_to_hex(colors: list) -> list:
     # TODO: Trouver la valeur hex de chaque couleur dans la liste et créer une liste de tupple où le premier élément est le nom de la couleur et le deuxième est la valeur hex
-    return []
+    return [(colors[n], cnames[colors[n]]) for n in range(len(colors))]
 
 
 def odd_integer_for_loop(end: int) -> list:
-    return []
+    nums = []
+    for i in range(end):
+        if i % 2 != 0:
+            nums.append(i)
+    return nums
 
 
 def odd_integer_list_comprehension(end: int) -> list:
-    return []
+    return [i for i in range(end) if i % 2 != 0]
 
 
 def loop_traversal(integers: list) -> None:
-    pass
+    print("First list:")
+    for index, elements in enumerate(odd_integer_for_loop(13)):
+        print(f"Index: {index}, Element: {elements}")
+
+    print("Second list:")
+    for index, elements in enumerate(odd_integer_list_comprehension(13)):
+        print(f"Index: {index}, Element: {elements}")
 
 
-def word_dict_for_loop() -> dict:
-    return {}
+def word_dict_for_loop(words) -> dict:
+    dico = {}
+    for i in range(len(words)):
+        dico[words[i][0].upper()] = words[i]
+    return dico
 
-
-def word_dict_comprehension() -> dict:
-    return {}
+def word_dict_comprehension(words) -> dict:
+    return {words[letter][0].upper():words[letter] for letter in range(len(words))}
 
 
 def dictionary_traversal(words: dict) -> None:
-    pass
+    print(words)
+    for index, key in enumerate(words):
+        print(f"Index: {index}, Key: {key}, Value: {words[key]}")
 
 
 def main() -> None:
@@ -64,7 +81,7 @@ def main() -> None:
 
     print(f"Les 2 dictionnaires sont-ils identiques? {words_for == words_comprehension}")
     print(f"Parcours d'un des 2 dictionnaires...")
-    loop_traversal(words_comprehension)
+    dictionary_traversal(words_comprehension)
 
 
 if __name__ == '__main__':
