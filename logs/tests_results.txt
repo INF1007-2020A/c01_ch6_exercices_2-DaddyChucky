@@ -1,0 +1,28 @@
+test_color_name_to_hex (__main__.TestExercice) ... ok
+test_list_to_dict (__main__.TestExercice) ... FAIL
+test_odd_integer_for_loop (__main__.TestExercice) ... ok
+test_odd_integer_list_comprehension (__main__.TestExercice) ... ok
+test_word_dict_comprehension (__main__.TestExercice) ... ok
+test_word_dict_for_loop (__main__.TestExercice) ... ok
+
+======================================================================
+FAIL: test_list_to_dict (__main__.TestExercice)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_exercice.py", line 25, in test_list_to_dict
+    'Mauvaise reponse'
+AssertionError: Lists differ: [{(0, 'a'), (2, 'z'), (1, 'b'), (3, 'patate[49 chars]e')}] != [{'a': 0, 'b': 1, 'z': 2, 'patate': 3}, {'a[33 chars]: 3}]
+
+First differing element 0:
+{(0, 'a'), (2, 'z'), (1, 'b'), (3, 'patate')}
+{'a': 0, 'b': 1, 'z': 2, 'patate': 3}
+
+- [{(0, 'a'), (2, 'z'), (1, 'b'), (3, 'patate')},
+-  {(0, 'a'), (1, '2'), (2, 'hello'), (3, 'tigre')}]
++ [{'a': 0, 'b': 1, 'patate': 3, 'z': 2},
++  {'2': 1, 'a': 0, 'hello': 2, 'tigre': 3}] : Mauvaise reponse
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.001s
+
+FAILED (failures=1)
